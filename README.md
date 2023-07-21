@@ -1,56 +1,25 @@
-# Godot Engine documentation
+# Godot Community Docs Mirror
 
-This repository contains the source files of [Godot Engine](https://godotengine.org)'s documentation, in reStructuredText markup language (reST).
+Welcome to the Godot Community Docs Mirror repository! This repository hosts a mirror copy of the official Godot Engine documentation available at [https://docs.godotengine.org/](https://docs.godotengine.org/). We are a community-run initiative aimed at providing a backup copy of the documentation to ensure continued accessibility and reliability.
 
-They are meant to be parsed with the [Sphinx](https://www.sphinx-doc.org/) documentation builder to build the HTML documentation on [Godot's website](https://docs.godotengine.org).
+### Access the Mirror
+The mirror of the Godot Engine documentation can be accessed at [https://docs.godot.community/](https://docs.godot.community/). Feel free to use this URL as a backup or alternative when browsing the documentation.
 
-## Download for offline use
+### Android App
 
-To browse the documentation offline, you can use the mirror of the documentation
-hosted on [DevDocs](https://devdocs.io/godot/). To enable offline browsing on
-DevDocs, you need to:
+Additionally, we also maintains an Android app, called "Godot Docs," that allows you to access the entire Godot Engine documentation offline, on the go! You can download the app from the Google Play Store: [Godot Docs on Google Play Store](https://play.google.com/store/apps/details?id=community.godot.docs). The app provides an easy and convenient way to access the documentation and receive updates with just one tap.
 
-- Click the three dots in the top-left corner, choose **Preferences**.
-- Enable the desired version of the Godot documentation by checking the box
-  next to it in the sidebar.
-- Click the three dots in the top-left corner, choose **Offline data**.
-- Click the **Install** link next to the Godot documentation.
+## About the Mirror
 
-You can also
-[download an HTML copy](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip)
-for offline reading (updated every Monday). Extract the ZIP archive then open
-the top-level `index.html` in a web browser.
+Our mission is to support the Godot community by maintaining an up-to-date mirror of the official Godot Engine documentation. This allows developers and enthusiasts to access the documentation from an alternative source in case the official site experiences downtime or other connectivity issues.
 
-For mobile devices or e-readers, you can also
-[download an ePub copy](https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip)
-for offline reading (updated every Monday). Extract the ZIP archive then open
-the `GodotEngine.epub` file in an e-book reader application.
+Since we also export the same build to our Android App version, we have made several adjustment to the original documentation to make it more suitable for mobile devices (ie. removing some clutters, etc).
 
-## Theming
+## How to Contribute
 
-The Godot documentation uses the default `sphinx_rtd_theme` with many
-[customizations](_static/) applied on top. It will automatically switch between
-the light and dark theme depending on your browser/OS' theming preference.
+Contributions to this mirror repository are welcome! If you find any discrepancies, errors, or want to suggest improvements, please consider opening an issue or a pull request. By contributing, you can help us ensure the accuracy and completeness of the mirrored documentation.
 
-If you use Firefox and wish to use the dark theme regardless of your OS
-configuration, you can install the
-[Dark Website Forcer](https://addons.mozilla.org/en-US/firefox/addon/dark-mode-website-switcher/)
-add-on.
-
-## Contributing
-
-All contributors are welcome to help on the Godot documentation.
-
-To get started, head to the [Contributing section](https://docs.godotengine.org/en/latest/contributing/ways_to_contribute.html#contributing-to-the-documentation) of the online manual. There, you will find all the information you need to write and submit changes.
-
-Here are some quick links to the areas you might be interested in:
-
-1. [Contributing to the online manual](https://docs.godotengine.org/en/latest/contributing/documentation/contributing_to_the_documentation.html)
-2. [Contributing to the class reference](https://docs.godotengine.org/en/latest/contributing/documentation/updating_the_class_reference.html)
-3. [Content guidelines](https://docs.godotengine.org/en/latest/contributing/documentation/content_guidelines.html)
-4. [Writing guidelines](https://docs.godotengine.org/en/latest/contributing/documentation/docs_writing_guidelines.html)
-5. [Building the manual](https://docs.godotengine.org/en/latest/contributing/documentation/building_the_manual.html)
-6. [Translating the documentation](https://docs.godotengine.org/en/latest/contributing/documentation/editor_and_docs_localization.html)
+Please note that this repository is meant to be a mirror copy, so we aim to keep it in sync with the official Godot Engine documentation. If you have suggestions or feedback related to the content of the documentation itself, please direct them to the [official Godot Engine documentation repository](https://github.com/godotengine/godot-docs).
 
 ## License
 
@@ -58,3 +27,12 @@ At the exception of the `classes/` folder, all the content of this repository is
 See [LICENSE.txt](/LICENSE.txt) for details.
 
 The files in the `classes/` folder are derived from [Godot's main source repository](https://github.com/godotengine/godot) and are distributed under the MIT license, with the same authors as above.
+
+## Join the Community
+
+We invite you to join the Godot community and engage with fellow developers, share knowledge, and stay updated with the latest news and events. Visit the Godot community website at [https://godot.community/](https://godot.community/) to explore various resources, forums, tutorials, and more.
+
+Happy game development with Godot!
+
+---
+**Note**: This repository is managed and maintained by the Godot community and is not affiliated with the official Godot Engine project. For issues specific to the mirrored documentation, please use the issues section in this repository. For issues related to the official Godot Engine project, visit their [GitHub repository](https://github.com/godotengine/godot-docs).

@@ -1,7 +1,7 @@
 {# Add rst-badge after rst-versions for small badge style. #}
 {% set display_version = version -%}
-{% set listed_languages = ({"en":"#", "de":"#", "es":"#", "fr":"#"}).items() -%}
-{% set listed_versions = ({"stable":"#", "latest":"#"}).items() -%}
+{% set listed_languages = ({"en":"#"}).items() -%}
+{% set listed_versions = ({"latest":"#"}).items() -%}
 
 {% if READTHEDOCS and current_version %}
   {% set display_version = current_version -%}
@@ -34,25 +34,11 @@
         <dd><a href="{{ url }}">{{ slug }}</a></dd>
       {% endfor %}
     </dl>
-    <dl>
-      {# Translators: The phrase "Read the Docs" is not translated #}
-      <dt>{{ _('On Read the Docs') }}</dt>
-        <dd>
-          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}">{{ _('Project Home') }}</a>
-        </dd>
-        <dd>
-          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/builds/">{{ _('Builds') }}</a>
-        </dd>
-        <dd>
-          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/downloads/">{{ _('Downloads') }}</a>
-        </dd>
-    </dl>
 
     <hr>
     <small>
-      <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
-      <span> · </span>
-      <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+      <span>Hosted by <a href="https://godot.community" rel="dofollow">Godot Community</a>.</span><br>
+			<span><a href="https://play.google.com/store/apps/details?id=community.godot.docs">Godot Docs</a> is also available on Play Store.</span>
     </small>
 
     {##}
