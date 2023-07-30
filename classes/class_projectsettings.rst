@@ -1089,11 +1089,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc>`                                                           | ``60``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`navigation/2d/default_cell_size<class_ProjectSettings_property_navigation/2d/default_cell_size>`                                                                                                     | ``1``                                                                                            |
+   | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_cell_size<class_ProjectSettings_property_navigation/2d/default_cell_size>`                                                                                                     | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`navigation/2d/default_edge_connection_margin<class_ProjectSettings_property_navigation/2d/default_edge_connection_margin>`                                                                           | ``1``                                                                                            |
+   | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_edge_connection_margin<class_ProjectSettings_property_navigation/2d/default_edge_connection_margin>`                                                                           | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`navigation/2d/default_link_connection_radius<class_ProjectSettings_property_navigation/2d/default_link_connection_radius>`                                                                           | ``4``                                                                                            |
+   | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_link_connection_radius<class_ProjectSettings_property_navigation/2d/default_link_connection_radius>`                                                                           | ``4.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/use_edge_connections<class_ProjectSettings_property_navigation/2d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1104,6 +1104,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/default_edge_connection_margin<class_ProjectSettings_property_navigation/3d/default_edge_connection_margin>`                                                                           | ``0.25``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/default_link_connection_radius<class_ProjectSettings_property_navigation/3d/default_link_connection_radius>`                                                                           | ``1.0``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                     | :ref:`navigation/3d/default_up<class_ProjectSettings_property_navigation/3d/default_up>`                                                                                                                   | ``Vector3(0, 1, 0)``                                                                             |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/use_edge_connections<class_ProjectSettings_property_navigation/3d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -3801,7 +3803,7 @@ Name of the .NET assembly. This name is used as the name of the ``.csproj`` and 
 
 :ref:`int<class_int>` **dotnet/project/assembly_reload_attempts** = ``3``
 
-Number of times to attempt assembly reloading after rebuilding .NET assembies. Effectively also the timeout in seconds to wait for unloading of script assemblies to finish.
+Number of times to attempt assembly reloading after rebuilding .NET assemblies. Effectively also the timeout in seconds to wait for unloading of script assemblies to finish.
 
 .. rst-class:: classref-item-separator
 
@@ -4251,7 +4253,9 @@ Path to a custom :ref:`Font<class_Font>` resource to use as default for all GUI 
 
 :ref:`int<class_int>` **gui/theme/default_font_antialiasing** = ``1``
 
-Font anti-aliasing mode. See :ref:`FontFile.antialiasing<class_FontFile_property_antialiasing>`.
+Font anti-aliasing mode for the default project font. See :ref:`FontFile.antialiasing<class_FontFile_property_antialiasing>`.
+
+\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project. Use the **Import** dock for that instead (see :ref:`ResourceImporterDynamicFont.antialiasing<class_ResourceImporterDynamicFont_property_antialiasing>`).
 
 .. rst-class:: classref-item-separator
 
@@ -4267,7 +4271,7 @@ If set to ``true``, the default font will have mipmaps generated. This prevents 
 
 Enabling :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_property_gui/theme/default_font_generate_mipmaps>` increases font generation time and memory usage. Only enable this setting if you actually need it.
 
-\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project.
+\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project. Use the **Import** dock for that instead (see :ref:`ResourceImporterDynamicFont.generate_mipmaps<class_ResourceImporterDynamicFont_property_generate_mipmaps>`).
 
 .. rst-class:: classref-item-separator
 
@@ -4279,7 +4283,9 @@ Enabling :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_pro
 
 :ref:`int<class_int>` **gui/theme/default_font_hinting** = ``1``
 
-Default font hinting mode. See :ref:`FontFile.hinting<class_FontFile_property_hinting>`.
+Font hinting mode for the default project font. See :ref:`FontFile.hinting<class_FontFile_property_hinting>`.
+
+\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project. Use the **Import** dock for that instead (see :ref:`ResourceImporterDynamicFont.hinting<class_ResourceImporterDynamicFont_property_hinting>`).
 
 .. rst-class:: classref-item-separator
 
@@ -4295,7 +4301,7 @@ If set to ``true``, the default font will use multichannel signed distance field
 
 MSDF font rendering can be combined with :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_property_gui/theme/default_font_generate_mipmaps>` to further improve font rendering quality when scaled down.
 
-\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project.
+\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project. Use the **Import** dock for that instead (see :ref:`ResourceImporterDynamicFont.multichannel_signed_distance_field<class_ResourceImporterDynamicFont_property_multichannel_signed_distance_field>`).
 
 .. rst-class:: classref-item-separator
 
@@ -4307,7 +4313,9 @@ MSDF font rendering can be combined with :ref:`gui/theme/default_font_generate_m
 
 :ref:`int<class_int>` **gui/theme/default_font_subpixel_positioning** = ``1``
 
-Default font glyph subpixel positioning mode. See :ref:`FontFile.subpixel_positioning<class_FontFile_property_subpixel_positioning>`.
+Font glyph subpixel positioning mode for the default project font. See :ref:`FontFile.subpixel_positioning<class_FontFile_property_subpixel_positioning>`.
+
+\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project. Use the **Import** dock for that instead (see :ref:`ResourceImporterDynamicFont.subpixel_positioning<class_ResourceImporterDynamicFont_property_subpixel_positioning>`).
 
 .. rst-class:: classref-item-separator
 
@@ -8127,7 +8135,7 @@ This is used by servers when used in multi-threading mode (servers and visual). 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **navigation/2d/default_cell_size** = ``1``
+:ref:`float<class_float>` **navigation/2d/default_cell_size** = ``1.0``
 
 Default cell size for 2D navigation maps. See :ref:`NavigationServer2D.map_set_cell_size<class_NavigationServer2D_method_map_set_cell_size>`.
 
@@ -8139,7 +8147,7 @@ Default cell size for 2D navigation maps. See :ref:`NavigationServer2D.map_set_c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **navigation/2d/default_edge_connection_margin** = ``1``
+:ref:`float<class_float>` **navigation/2d/default_edge_connection_margin** = ``1.0``
 
 Default edge connection margin for 2D navigation maps. See :ref:`NavigationServer2D.map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`.
 
@@ -8151,7 +8159,7 @@ Default edge connection margin for 2D navigation maps. See :ref:`NavigationServe
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **navigation/2d/default_link_connection_radius** = ``4``
+:ref:`float<class_float>` **navigation/2d/default_link_connection_radius** = ``4.0``
 
 Default link connection radius for 2D navigation maps. See :ref:`NavigationServer2D.map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>`.
 
@@ -8214,6 +8222,18 @@ Default edge connection margin for 3D navigation maps. See :ref:`NavigationServe
 :ref:`float<class_float>` **navigation/3d/default_link_connection_radius** = ``1.0``
 
 Default link connection radius for 3D navigation maps. See :ref:`NavigationServer3D.map_set_link_connection_radius<class_NavigationServer3D_method_map_set_link_connection_radius>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/3d/default_up:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **navigation/3d/default_up** = ``Vector3(0, 1, 0)``
+
+Default up orientation for 3D navigation maps. See :ref:`NavigationServer3D.map_set_up<class_NavigationServer3D_method_map_set_up>`.
 
 .. rst-class:: classref-item-separator
 
