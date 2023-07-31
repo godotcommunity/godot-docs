@@ -1353,6 +1353,9 @@ p + .classref-constant {
 .wy-nav-top a {
     background-color: var(--navbar-background-color);
     color: var(--navbar-level-1-color);
+		position: sticky;
+		top: 0;
+		z-index: 999;
 }
 
 /* Navigational sidebar */

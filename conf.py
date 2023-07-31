@@ -18,6 +18,7 @@ extensions = [
     "notfound.extension",
     "sphinxext.opengraph",
     "sphinx_copybutton",
+    "sphinx_sitemap"
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
@@ -110,7 +111,7 @@ if not language in supported_languages.keys():
     )
     language = "en"
 
-is_i18n = False #tags.has("i18n")  # noqa: F821
+is_i18n = tags.has("i18n")  # noqa: F821
 
 exclude_patterns = ["_build"]
 
@@ -131,7 +132,7 @@ pygments_style = "sphinx"
 highlight_language = "gdscript"
 
 # -- Options for HTML output ----------------------------------------------
-
+html_baseurl = "https://docs.godot.community/"
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 if on_rtd:

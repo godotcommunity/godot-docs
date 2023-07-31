@@ -1,12 +1,6 @@
 Godot Docs – *master* branch
 ============================
 
-.. only:: not i18n
-
-  .. note:: Godot's documentation is available in various languages and versions.
-            Expand the "Read the Docs" panel at the bottom of the sidebar to see
-            the list.
-
 .. only:: i18n
 
   .. note:: This documentation is translated from the `original English one
