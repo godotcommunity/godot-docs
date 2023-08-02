@@ -79,7 +79,7 @@ master_doc = "index"
 # General information about the project
 project = "Godot Engine"
 copyright = (
-    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC BY 3.0). This page is a community run mirror of the official Godot Engine documentation"
+    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC BY 3.0). This page is an unofficial community-run mirror of the official Godot Engine documentation"
 )
 author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
@@ -137,7 +137,7 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 if on_rtd:
     using_rtd_theme = True
-
+sitemap_url_scheme = "{link}"
 # Theme options
 html_theme_options = {
     # if we have a html_logo below, this shows /only/ the logo with no title text

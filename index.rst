@@ -21,8 +21,11 @@ Welcome to the mirror of the official documentation of `Godot Engine <https://go
 the free and open source community-driven 2D and 3D game engine! If you are new
 to this documentation, we recommend that you read the
 :ref:`introduction page <doc_about_intro>` to get an overview of what this
-documentation has to offer. This repository serves as a backup copy of the official 
-Godot Engine documentation, providing continued accessibility and reliability.
+documentation has to offer. 
+
+.. note:: This repository is managed and maintained by the Godot community and is not affiliated with the official Godot Engine project.
+					This repository serves as an alternative source in case the official site experiences downtime or other connectivity issues.
+					For issues specific to the mirrored documentation, please use the issues section in our `Github repo <https://github.com/godotcommunity/godot-docs>`_.
 
 The table of contents in the sidebar should let you easily access the documentation
 for your topic of interest. You can also use the search function in the top-left corner.
