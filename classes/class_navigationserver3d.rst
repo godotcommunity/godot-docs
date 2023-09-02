@@ -103,6 +103,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`bake_from_source_geometry_data<class_NavigationServer3D_method_bake_from_source_geometry_data>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Callable<class_Callable>` callback=Callable() **)**                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`bake_from_source_geometry_data_async<class_NavigationServer3D_method_bake_from_source_geometry_data_async>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Callable<class_Callable>` callback=Callable() **)**                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`free_rid<class_NavigationServer3D_method_free_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                                                                                                                         |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`get_debug_enabled<class_NavigationServer3D_method_get_debug_enabled>` **(** **)** |const|                                                                                                                                                                                                                                                                         |
@@ -511,7 +513,7 @@ Sets the callback :ref:`Callable<class_Callable>` that gets called after each av
 
 void **agent_set_avoidance_enabled** **(** :ref:`RID<class_RID>` agent, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` the provided ``agent`` calculates avoidance.
+If ``enabled`` is ``true``, the provided ``agent`` calculates avoidance.
 
 .. rst-class:: classref-item-separator
 
@@ -727,6 +729,18 @@ Bakes the provided ``navigation_mesh`` with the data from the provided ``source_
 
 ----
 
+.. _class_NavigationServer3D_method_bake_from_source_geometry_data_async:
+
+.. rst-class:: classref-method
+
+void **bake_from_source_geometry_data_async** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Callable<class_Callable>` callback=Callable() **)**
+
+Bakes the provided ``navigation_mesh`` with the data from the provided ``source_geometry_data`` as an async task running on a background thread. After the process is finished the optional ``callback`` will be called.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_free_rid:
 
 .. rst-class:: classref-method
@@ -913,7 +927,7 @@ Sets whether this ``link`` can be travelled in both directions.
 
 void **link_set_enabled** **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` is ``true`` the specified ``link`` will contribute to its current navigation map.
+If ``enabled`` is ``true``, the specified ``link`` will contribute to its current navigation map.
 
 .. rst-class:: classref-item-separator
 
@@ -1303,7 +1317,7 @@ Sets the map up direction.
 
 void **map_set_use_edge_connections** **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` enabled **)**
 
-Set the navigation ``map`` edge connection use. If ``enabled`` the navigation map allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+Set the navigation ``map`` edge connection use. If ``enabled`` is ``true``, the navigation map allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
 .. rst-class:: classref-item-separator
 
@@ -1375,7 +1389,7 @@ Returns ``true`` if the provided ``obstacle`` uses avoidance in 3D space Vector3
 
 void **obstacle_set_avoidance_enabled** **(** :ref:`RID<class_RID>` obstacle, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` the provided ``obstacle`` affects avoidance using agents.
+If ``enabled`` is ``true``, the provided ``obstacle`` affects avoidance using agents.
 
 .. rst-class:: classref-item-separator
 
@@ -1685,7 +1699,7 @@ If multiple navigation meshes have positions at equal distance the navigation re
 
 void **region_set_enabled** **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` is ``true`` the specified ``region`` will contribute to its current navigation map.
+If ``enabled`` is ``true``, the specified ``region`` will contribute to its current navigation map.
 
 .. rst-class:: classref-item-separator
 
@@ -1781,7 +1795,7 @@ Sets the ``travel_cost`` for this ``region``.
 
 void **region_set_use_edge_connections** **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` the navigation ``region`` will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+If ``enabled`` is ``true``, the navigation ``region`` will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
 .. rst-class:: classref-item-separator
 

@@ -89,6 +89,8 @@ Methods
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`get_collider_shape<class_RayCast3D_method_get_collider_shape>` **(** **)** |const|                                                                       |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_collision_face_index<class_RayCast3D_method_get_collision_face_index>` **(** **)** |const|                                                           |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`get_collision_mask_value<class_RayCast3D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`get_collision_normal<class_RayCast3D_method_get_collision_normal>` **(** **)** |const|                                                                   |
@@ -124,7 +126,7 @@ Property Descriptions
 - void **set_collide_with_areas** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collide_with_areas_enabled** **(** **)**
 
-If ``true``, collision with :ref:`Area3D<class_Area3D>`\ s will be reported.
+If ``true``, collisions with :ref:`Area3D<class_Area3D>`\ s will be reported.
 
 .. rst-class:: classref-item-separator
 
@@ -141,7 +143,7 @@ If ``true``, collision with :ref:`Area3D<class_Area3D>`\ s will be reported.
 - void **set_collide_with_bodies** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collide_with_bodies_enabled** **(** **)**
 
-If ``true``, collision with :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s will be reported.
+If ``true``, collisions with :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s will be reported.
 
 .. rst-class:: classref-item-separator
 
@@ -332,7 +334,7 @@ Removes all collision exceptions for this ray.
 
 void **force_raycast_update** **(** **)**
 
-Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
+Updates the collision information for the ray immediately, without waiting for the next ``_physics_process`` call. Use this method, for example, when the ray or its parent has changed state.
 
 \ **Note:** :ref:`enabled<class_RayCast3D_property_enabled>` does not need to be ``true`` for this to work.
 
@@ -371,6 +373,18 @@ Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, o
 :ref:`int<class_int>` **get_collider_shape** **(** **)** |const|
 
 Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RayCast3D_method_get_collision_face_index:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_collision_face_index** **(** **)** |const|
+
+Returns the collision object's face index at the collision point, or ``-1`` if the shape intersecting the ray is not a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`.
 
 .. rst-class:: classref-item-separator
 

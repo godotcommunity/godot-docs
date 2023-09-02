@@ -21,6 +21,8 @@ Tutorials
 
 - :doc:`Exporting for iOS <../tutorials/export/exporting_for_ios>`
 
+- :doc:`iOS plugins documentation index <../tutorials/platform/ios/index>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -296,7 +298,7 @@ Can be overridden with the environment variable ``GODOT_IOS_PROVISIONING_PROFILE
 
 :ref:`String<class_String>` **application/short_version**
 
-Application version visible to the user, can only contain numeric characters (``0-9``) and periods (``.``).
+Application version visible to the user, can only contain numeric characters (``0-9``) and periods (``.``). Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
 
 .. rst-class:: classref-item-separator
 
@@ -332,7 +334,7 @@ Supported device family.
 
 :ref:`String<class_String>` **application/version**
 
-Machine-readable application version, in the ``major.minor.patch`` format, can only contain numeric characters (``0-9``) and periods (``.``).
+Machine-readable application version, in the ``major.minor.patch`` format, can only contain numeric characters (``0-9``) and periods (``.``). This must be incremented on every new release pushed to the App Store.
 
 .. rst-class:: classref-item-separator
 

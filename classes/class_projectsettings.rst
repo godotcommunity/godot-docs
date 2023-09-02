@@ -81,6 +81,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/config/version<class_ProjectSettings_property_application/config/version>`                                                                                                               | ``""``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`                                                                                       | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/run/delta_smoothing<class_ProjectSettings_property_application/run/delta_smoothing>`                                                                                                     | ``true``                                                                                         |
@@ -155,6 +157,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_identifier<class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier>`                                                                         | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_local_declaration<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_declaration>`                                                           | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_local_usage<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage>`                                                                       | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                               | ``1``                                                                                            |
@@ -188,6 +194,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                                     | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_for_variable_type<class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type>`                                                             | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_static_unload<class_ProjectSettings_property_debug/gdscript/warnings/redundant_static_unload>`                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -394,6 +402,8 @@ Properties
    | :ref:`String<class_String>`                       | :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>`                                                                                                             | ``"disabled"``                                                                                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`display/window/stretch/scale<class_ProjectSettings_property_display/window/stretch/scale>`                                                                                                           | ``1.0``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`display/window/stretch/scale_mode<class_ProjectSettings_property_display/window/stretch/scale_mode>`                                                                                                 | ``"fractional"``                                                                                 |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/subwindows/embed_subwindows<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>`                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1113,6 +1123,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/avoidance/thread_model/avoidance_use_multiple_threads<class_ProjectSettings_property_navigation/avoidance/thread_model/avoidance_use_multiple_threads>`                                   | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/baking/thread_model/baking_use_high_priority_threads<class_ProjectSettings_property_navigation/baking/thread_model/baking_use_high_priority_threads>`                                     | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/baking/thread_model/baking_use_multiple_threads<class_ProjectSettings_property_navigation/baking/thread_model/baking_use_multiple_threads>`                                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger/max_chars_per_second>`                                                                           | ``32768``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_errors_per_second<class_ProjectSettings_property_network/limits/debugger/max_errors_per_second>`                                                                         | ``400``                                                                                          |
@@ -1483,6 +1497,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/textures/webp_compression/lossless_compression_factor<class_ProjectSettings_property_rendering/textures/webp_compression/lossless_compression_factor>`                                     | ``25``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/viewport/hdr_2d<class_ProjectSettings_property_rendering/viewport/hdr_2d>`                                                                                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/viewport/transparent_background<class_ProjectSettings_property_rendering/viewport/transparent_background>`                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>`                                                                                                                               | ``0``                                                                                            |
@@ -1557,6 +1573,23 @@ Methods
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`set_setting<class_ProjectSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                      |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Signals
+-------
+
+.. _class_ProjectSettings_signal_settings_changed:
+
+.. rst-class:: classref-signal
+
+**settings_changed** **(** **)**
+
+Emitted when any setting is changed, up to once per process frame.
 
 .. rst-class:: classref-section-separator
 
@@ -1787,6 +1820,18 @@ If ``false``, a non-hidden directory (``godot``) will be used instead.
 
 ----
 
+.. _class_ProjectSettings_property_application/config/version:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **application/config/version** = ``""``
+
+The project's human-readable version identifier. This is used by exporters if the version identifier isn't overridden there. If :ref:`application/config/version<class_ProjectSettings_property_application/config/version>` is an empty string and the version identifier isn't overridden in an exporter, the exporter will use ``1.0.0`` as a version identifier.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_application/config/windows_native_icon:
 
 .. rst-class:: classref-property
@@ -1953,6 +1998,8 @@ If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/
 
 See also :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
 
+This setting can be overridden using the ``--max-fps <fps;>`` command line argument (including with a value of ``0`` for unlimited framerate).
+
 \ **Note:** This property is only read when the project starts. To change the rendering FPS cap at runtime, set :ref:`Engine.max_fps<class_Engine_property_max_fps>` instead.
 
 .. rst-class:: classref-item-separator
@@ -2059,7 +2106,9 @@ Specifies the preferred output latency in milliseconds for audio. Lower values w
 
 Audio output latency may be constrained by the host operating system and audio hardware drivers. If the host can not provide the specified audio output latency then Godot will attempt to use the nearest latency allowed by the host. As such you should always use :ref:`AudioServer.get_output_latency<class_AudioServer_method_get_output_latency>` to determine the actual audio output latency.
 
-\ **Note:** This setting is ignored on all versions of Windows prior to Windows 10.
+Audio output latency can be overridden using the ``--audio-output-latency <ms>`` command line argument.
+
+\ **Note:** This setting is ignored on Android, and on all versions of Windows prior to Windows 10.
 
 .. rst-class:: classref-item-separator
 
@@ -2275,6 +2324,30 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_declaration:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_declaration** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier declared in the nested block has the same name as an identifier declared below in the parent block.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_usage** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier that will be shadowed below in the block is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function:
 
 .. rst-class:: classref-property
@@ -2474,6 +2547,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/redundant_await** = ``1``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a function that is not a coroutine is called with await.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/redundant_for_variable_type** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a ``for`` variable type specifier is a supertype of the inferred type.
 
 .. rst-class:: classref-item-separator
 
@@ -3731,9 +3816,9 @@ Defines how the base size is stretched to fit the resolution of the window or sc
 
 \ **"disabled"**: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
 
-\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
+\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art esthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
 
-\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
+\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art esthetic.
 
 .. rst-class:: classref-item-separator
 
@@ -3745,9 +3830,19 @@ Defines how the base size is stretched to fit the resolution of the window or sc
 
 :ref:`float<class_float>` **display/window/stretch/scale** = ``1.0``
 
-.. container:: contribute
+The scale factor multiplier to use for 2D elements. This multiplies the final scale factor determined by :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>`. If using the **Disabled** stretch mode, this scale factor is applied as-is. This can be adjusted to make the UI easier to read on certain displays.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_display/window/stretch/scale_mode:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **display/window/stretch/scale_mode** = ``"fractional"``
+
+The policy to use to determine the final scale factor for 2D elements. This affects how :ref:`display/window/stretch/scale<class_ProjectSettings_property_display/window/stretch/scale>` is applied, in addition to the automatic scale factor determined by :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8275,6 +8370,30 @@ If enabled the avoidance calculations use multiple threads.
 
 ----
 
+.. _class_ProjectSettings_property_navigation/baking/thread_model/baking_use_high_priority_threads:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_high_priority_threads** = ``true``
+
+If enabled and async navmesh baking uses multiple threads the threads run with high priority.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/baking/thread_model/baking_use_multiple_threads:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_multiple_threads** = ``true``
+
+If enabled the async navmesh baking uses multiple threads.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_network/limits/debugger/max_chars_per_second:
 
 .. rst-class:: classref-property
@@ -10637,7 +10756,7 @@ The anisotropic filtering level also affects decals and light projectors if they
 
 Affects the final texture sharpness by reading from a lower or higher mipmap (also called "texture LOD bias"). Negative values make mipmapped textures sharper but grainier when viewed at a distance, while positive values make mipmapped textures blurrier (even when up close).
 
-Enabling temporal antialiasing (:ref:`rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`) will automatically apply a ``-0.5`` offset to this value, while enabling FXAA (:ref:`rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`) will automatically apply a ``-0.25`` offset to this value. If both TAA and FXAA are enbled at the same time, an offset of ``-0.75`` is applied to this value.
+Enabling temporal antialiasing (:ref:`rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`) will automatically apply a ``-0.5`` offset to this value, while enabling FXAA (:ref:`rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`) will automatically apply a ``-0.25`` offset to this value. If both TAA and FXAA are enabled at the same time, an offset of ``-0.75`` is applied to this value.
 
 \ **Note:** If :ref:`rendering/scaling_3d/scale<class_ProjectSettings_property_rendering/scaling_3d/scale>` is lower than ``1.0`` (exclusive), :ref:`rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>` is used to adjust the automatic mipmap bias which is calculated internally based on the scale factor. The formula for this is ``log2(scaling_3d_scale) + mipmap_bias``.
 
@@ -10736,6 +10855,18 @@ The default compression method for WebP. Affects both lossy and lossless WebP. A
 :ref:`float<class_float>` **rendering/textures/webp_compression/lossless_compression_factor** = ``25``
 
 The default compression factor for lossless WebP. Decompression speed is mostly unaffected by the compression factor. Supported values are 0 to 100.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/viewport/hdr_2d:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/viewport/hdr_2d** = ``false``
+
+If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root viewport. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow).
 
 .. rst-class:: classref-item-separator
 
@@ -10972,8 +11103,8 @@ Adds a custom property info to a property. The dictionary must contain:
     var propertyInfo = new Godot.Collections.Dictionary
     {
         {"name", "category/propertyName"},
-        {"type", Variant.Type.Int},
-        {"hint", PropertyHint.Enum},
+        {"type", (int)Variant.Type.Int},
+        {"hint", (int)PropertyHint.Enum},
         {"hint_string", "one,two,three"},
     };
     

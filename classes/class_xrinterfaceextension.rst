@@ -21,6 +21,13 @@ Description
 
 External XR interface plugins should inherit from this class.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`XR documentation index <../tutorials/xr/index>`
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -286,7 +293,7 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` with tracker names c
 
 :ref:`Dictionary<class_Dictionary>` **_get_system_info** **(** **)** |virtual| |const|
 
-Returns a :ref:`Dictionary<class_Dictionary>` with system informationr elated to this interface.
+Returns a :ref:`Dictionary<class_Dictionary>` with system information related to this interface.
 
 .. rst-class:: classref-item-separator
 

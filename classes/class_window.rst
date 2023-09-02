@@ -48,6 +48,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`content_scale_size<class_Window_property_content_scale_size>`               | ``Vector2i(0, 0)``       |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`ContentScaleStretch<enum_Window_ContentScaleStretch>`     | :ref:`content_scale_stretch<class_Window_property_content_scale_stretch>`         | ``0``                    |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`int<class_int>`                                           | :ref:`current_screen<class_Window_property_current_screen>`                       |                          |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`exclusive<class_Window_property_exclusive>`                                 | ``false``                |
@@ -99,6 +101,8 @@ Methods
 .. table::
    :widths: auto
 
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>` **(** **)** |virtual| |const|                                                                                                                                    |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**                                                                                |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -187,6 +191,8 @@ Methods
    | :ref:`bool<class_bool>`                             | :ref:`is_maximize_allowed<class_Window_method_is_maximize_allowed>` **(** **)** |const|                                                                                                                                                            |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_using_font_oversampling<class_Window_method_is_using_font_oversampling>` **(** **)** |const|                                                                                                                                              |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`move_to_center<class_Window_method_move_to_center>` **(** **)**                                                                                                                                                                              |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`move_to_foreground<class_Window_method_move_to_foreground>` **(** **)**                                                                                                                                                                      |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -392,7 +398,7 @@ Emitted when a go back request is sent (e.g. pressing the "Back" button on Andro
 
 **mouse_entered** **(** **)**
 
-Emitted when the mouse cursor enters the **Window**'s area, regardless if it's currently focused or not.
+Emitted when the mouse cursor enters the **Window**'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or windows, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
 
 .. rst-class:: classref-item-separator
 
@@ -404,7 +410,7 @@ Emitted when the mouse cursor enters the **Window**'s area, regardless if it's c
 
 **mouse_exited** **(** **)**
 
-Emitted when the mouse cursor exits the **Window**'s area (including when it's hovered over another window on top of this one).
+Emitted when the mouse cursor leaves the **Window**'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or windows, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
 
 .. rst-class:: classref-item-separator
 
@@ -695,6 +701,32 @@ The content's aspect will be preserved. If the target size has different aspect 
 
 ----
 
+.. _enum_Window_ContentScaleStretch:
+
+.. rst-class:: classref-enumeration
+
+enum **ContentScaleStretch**:
+
+.. _class_Window_constant_CONTENT_SCALE_STRETCH_FRACTIONAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContentScaleStretch<enum_Window_ContentScaleStretch>` **CONTENT_SCALE_STRETCH_FRACTIONAL** = ``0``
+
+The content will be stretched according to a fractional factor. This fills all the space available in the window, but allows "pixel wobble" to occur due to uneven pixel scaling.
+
+.. _class_Window_constant_CONTENT_SCALE_STRETCH_INTEGER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContentScaleStretch<enum_Window_ContentScaleStretch>` **CONTENT_SCALE_STRETCH_INTEGER** = ``1``
+
+The content will be stretched only according to an integer factor, preserving sharp pixels. This may leave a black background visible on the window's edges depending on the window size.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_Window_LayoutDirection:
 
 .. rst-class:: classref-enumeration
@@ -952,6 +984,23 @@ Base size of the content (i.e. nodes that are drawn inside the window). If non-z
 
 ----
 
+.. _class_Window_property_content_scale_stretch:
+
+.. rst-class:: classref-property
+
+:ref:`ContentScaleStretch<enum_Window_ContentScaleStretch>` **content_scale_stretch** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_content_scale_stretch** **(** :ref:`ContentScaleStretch<enum_Window_ContentScaleStretch>` value **)**
+- :ref:`ContentScaleStretch<enum_Window_ContentScaleStretch>` **get_content_scale_stretch** **(** **)**
+
+The policy to use to determine the final scale factor for 2D elements. This affects how :ref:`content_scale_factor<class_Window_property_content_scale_factor>` is applied, in addition to the automatic scale factor determined by :ref:`content_scale_size<class_Window_property_content_scale_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_property_current_screen:
 
 .. rst-class:: classref-property
@@ -1171,8 +1220,6 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 If ``true``, the **Window** will be considered a popup. Popups are sub-windows that don't show as separate windows in system's window manager's window list and will send close request when anything is clicked outside of them (unless :ref:`exclusive<class_Window_property_exclusive>` is enabled).
 
-\ **Note:** This property only works with native windows.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -1383,6 +1430,18 @@ If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_
 Method Descriptions
 -------------------
 
+.. _class_Window_method__get_contents_minimum_size:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **_get_contents_minimum_size** **(** **)** |virtual| |const|
+
+Virtual method to be implemented by the user. Overrides the value returned by :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_method_add_theme_color_override:
 
 .. rst-class:: classref-method
@@ -1522,6 +1581,8 @@ Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Win
 :ref:`Vector2<class_Vector2>` **get_contents_minimum_size** **(** **)** |const|
 
 Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when children nodes have changed.
+
+The value returned by this method can be overridden with :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1960,6 +2021,18 @@ Returns ``true`` if the window can be maximized (the maximize button is enabled)
 :ref:`bool<class_bool>` **is_using_font_oversampling** **(** **)** |const|
 
 Returns ``true`` if font oversampling is enabled. See :ref:`set_use_font_oversampling<class_Window_method_set_use_font_oversampling>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_move_to_center:
+
+.. rst-class:: classref-method
+
+void **move_to_center** **(** **)**
+
+Centers a native window on the current screen and an embedded window on its embedder :ref:`Viewport<class_Viewport>`.
 
 .. rst-class:: classref-item-separator
 

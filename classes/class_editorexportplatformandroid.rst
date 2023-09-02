@@ -23,6 +23,8 @@ Tutorials
 
 - :doc:`Custom builds for Android <../tutorials/export/android_custom_build>`
 
+- :doc:`Android plugins documentation index <../tutorials/platform/index>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -91,6 +93,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`package/show_as_launcher_app<class_EditorExportPlatformAndroid_property_package/show_as_launcher_app>`                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`package/show_in_android_tv<class_EditorExportPlatformAndroid_property_package/show_in_android_tv>`                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`package/show_in_app_library<class_EditorExportPlatformAndroid_property_package/show_in_app_library>`                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`package/signed<class_EditorExportPlatformAndroid_property_package/signed>`                                                                 |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -798,6 +802,20 @@ If ``true``, this app will show in Android TV launcher UI.
 
 ----
 
+.. _class_EditorExportPlatformAndroid_property_package/show_in_app_library:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **package/show_in_app_library**
+
+If ``true``, this app will show in the device's app library.
+
+\ **Note:** This is ``true`` by default.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformAndroid_property_package/signed:
 
 .. rst-class:: classref-property
@@ -960,7 +978,7 @@ Allows an application to act as an AccountAuthenticator for the AccountManager.
 
 :ref:`bool<class_bool>` **permissions/battery_stats**
 
-Allows an application to collect battery statistics. Sett `BATTERY_STATS <https://developer.android.com/reference/android/Manifest.permission#BATTERY_STATS>`__.
+Allows an application to collect battery statistics. See `BATTERY_STATS <https://developer.android.com/reference/android/Manifest.permission#BATTERY_STATS>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2670,7 +2688,7 @@ If ``true``, allows the application to participate in the backup and restore inf
 
 :ref:`int<class_int>` **version/code**
 
-Machine-readable application version.
+Machine-readable application version. This must be incremented for every new release pushed to the Play Store.
 
 .. rst-class:: classref-item-separator
 
@@ -2682,7 +2700,7 @@ Machine-readable application version.
 
 :ref:`String<class_String>` **version/name**
 
-Application version visible to the user.
+Application version visible to the user. Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
 
 .. rst-class:: classref-item-separator
 

@@ -51,6 +51,8 @@ Properties
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`DisplayServer<class_DisplayServer>`                     | :ref:`DisplayServer<class_@GlobalScope_property_DisplayServer>`                     |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`EditorInterface<class_EditorInterface>`                 | :ref:`EditorInterface<class_@GlobalScope_property_EditorInterface>`                 |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Engine<class_Engine>`                                   | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`EngineDebugger<class_EngineDebugger>`                   | :ref:`EngineDebugger<class_@GlobalScope_property_EngineDebugger>`                   |
@@ -133,11 +135,17 @@ Methods
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`acos<class_@GlobalScope_method_acos>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`acosh<class_@GlobalScope_method_acosh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`asin<class_@GlobalScope_method_asin>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`asinh<class_@GlobalScope_method_asinh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`atan<class_@GlobalScope_method_atan>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`atan2<class_@GlobalScope_method_atan2>` **(** :ref:`float<class_float>` y, :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                             |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`atanh<class_@GlobalScope_method_atanh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`bezier_derivative<class_@GlobalScope_method_bezier_derivative>` **(** :ref:`float<class_float>` start, :ref:`float<class_float>` control_1, :ref:`float<class_float>` control_2, :ref:`float<class_float>` end, :ref:`float<class_float>` t **)**                                                                                                                        |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1683,6 +1691,38 @@ Launch Shortcut E key.
 
 Launch Shortcut F key.
 
+.. _class_@GlobalScope_constant_KEY_GLOBE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_GLOBE** = ``4194416``
+
+"Globe" key on Mac / iPad keyboard.
+
+.. _class_@GlobalScope_constant_KEY_KEYBOARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_KEYBOARD** = ``4194417``
+
+"On-screen keyboard" key on iPad keyboard.
+
+.. _class_@GlobalScope_constant_KEY_JIS_EISU:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_EISU** = ``4194418``
+
+英数 key on Mac keyboard.
+
+.. _class_@GlobalScope_constant_KEY_JIS_KANA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_KANA** = ``4194419``
+
+かな key on Mac keyboard.
+
 .. _class_@GlobalScope_constant_KEY_UNKNOWN:
 
 .. rst-class:: classref-enumeration-constant
@@ -2258,38 +2298,6 @@ Z key.
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_SECTION** = ``167``
 
 § key.
-
-.. _class_@GlobalScope_constant_KEY_GLOBE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_GLOBE** = ``4194416``
-
-"Globe" key on Mac / iPad keyboard.
-
-.. _class_@GlobalScope_constant_KEY_KEYBOARD:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_KEYBOARD** = ``4194417``
-
-"On-screen keyboard" key iPad keyboard.
-
-.. _class_@GlobalScope_constant_KEY_JIS_EISU:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_EISU** = ``4194418``
-
-英数 key on Mac keyboard.
-
-.. _class_@GlobalScope_constant_KEY_JIS_KANA:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_KANA** = ``4194419``
-
-かな key on Mac keyboard.
 
 .. rst-class:: classref-item-separator
 
@@ -4725,6 +4733,20 @@ The :ref:`DisplayServer<class_DisplayServer>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_EditorInterface:
+
+.. rst-class:: classref-property
+
+:ref:`EditorInterface<class_EditorInterface>` **EditorInterface**
+
+The :ref:`EditorInterface<class_EditorInterface>` singleton.
+
+\ **Note:** Only available in editor builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_property_Engine:
 
 .. rst-class:: classref-property
@@ -5203,6 +5225,25 @@ Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``
 
 ----
 
+.. _class_@GlobalScope_method_acosh:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **acosh** **(** :ref:`float<class_float>` x **)**
+
+Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a value in radians. Use it to get the angle from an angle's cosine in hyperbolic space if ``x`` is larger or equal to 1. For values of ``x`` lower than 1, it will return 0, in order to prevent :ref:`acosh<class_@GlobalScope_method_acosh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+
+::
+
+    var a = acosh(2) # Returns 1.31695789692482
+    cosh(a) # Returns 2
+    
+    var b = acosh(-1) # Returns 0
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_method_asin:
 
 .. rst-class:: classref-method
@@ -5215,6 +5256,23 @@ Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``
 
     # s is 0.523599 or 30 degrees if converted with rad_to_deg(s)
     var s = asin(0.5)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_asinh:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **asinh** **(** :ref:`float<class_float>` x **)**
+
+Returns the hyperbolic arc (also called inverse) sine of ``x``, returning a value in radians. Use it to get the angle from an angle's sine in hyperbolic space.
+
+::
+
+    var a = asinh(0.9) # Returns 0.8088669356527824
+    sinh(a) # Returns 0.9
 
 .. rst-class:: classref-item-separator
 
@@ -5253,6 +5311,28 @@ Important note: The Y coordinate comes first, by convention.
 ::
 
     var a = atan2(0, -1) # a is 3.141593
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_atanh:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **atanh** **(** :ref:`float<class_float>` x **)**
+
+Returns the hyperbolic arc (also called inverse) tangent of ``x``, returning a value in radians. Use it to get the angle from an angle's tangent in hyperbolic space if ``x`` is between -1 and 1 (non-inclusive).
+
+In mathematics, the inverse hyperbolic tangent is only defined for -1 < ``x`` < 1 in the real set, so values equal or lower to -1 for ``x`` return negative :ref:`@GDScript.INF<class_@GDScript_constant_INF>` and values equal or higher than 1 return positive :ref:`@GDScript.INF<class_@GDScript_constant_INF>` in order to prevent :ref:`atanh<class_@GlobalScope_method_atanh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+
+::
+
+    var a = atanh(0.9) # Returns 1.47221948958322
+    tanh(a) # Returns 0.9
+    
+    var b = atanh(-2) # Returns -inf
+    tanh(b) # Returns -1
 
 .. rst-class:: classref-item-separator
 
@@ -5598,9 +5678,9 @@ Returns a human-readable name for the given :ref:`Error<enum_@GlobalScope_Error>
 
 :ref:`float<class_float>` **exp** **(** :ref:`float<class_float>` x **)**
 
-The natural exponential function. It raises the mathematical constant **e** to the power of ``x`` and returns it.
+The natural exponential function. It raises the mathematical constant *e* to the power of ``x`` and returns it.
 
-\ **e** has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
+\ *e* has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
 
 For exponents to other bases use the method :ref:`pow<class_@GlobalScope_method_pow>`.
 
@@ -6158,9 +6238,7 @@ Use a negative ``delta`` value to move away.
 
 :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` value **)**
 
-Returns the nearest equal or larger power of 2 for the integer ``value``.
-
-In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such that ``value <= a`` for some non-negative integer ``n``.
+Returns the smallest integer power of 2 that is greater than or equal to ``value``.
 
 ::
 
@@ -6171,7 +6249,7 @@ In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such th
     nearest_po2(0)  # Returns 0 (this may not be expected)
     nearest_po2(-1) # Returns 0 (this may not be expected)
 
-\ **Warning:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for negative values of ``value`` (in reality, 1 is the smallest integer power of 2).
+\ **Warning:** Due to its implementation, this method returns ``0`` rather than ``1`` for values less than or equal to ``0``, with an exception for ``value`` being the smallest negative 64-bit integer (``-9223372036854775808``) in which case the ``value`` is returned unchanged.
 
 .. rst-class:: classref-item-separator
 
