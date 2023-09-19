@@ -23,7 +23,8 @@ to this documentation, we recommend that you read the
 :ref:`introduction page <doc_about_intro>` to get an overview of what this
 documentation has to offer. 
 
-.. note:: This repository is managed and maintained by the Godot community and is not affiliated with the official Godot Engine project.
+.. note:: This repository is managed and maintained by `Godot Community <https://godot.community>`_ 
+					and is not affiliated with the official Godot Engine project.
 					This repository serves as an alternative source in case the official site experiences downtime or other connectivity issues.
 					For issues specific to the mirrored documentation, please use the issues section in our `Github repo <https://github.com/godotcommunity/godot-docs>`_.
 

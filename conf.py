@@ -79,7 +79,7 @@ master_doc = "index"
 # General information about the project
 project = "Godot Engine"
 copyright = (
-    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC BY 3.0). This page is an unofficial community-run mirror of the official Godot Engine documentation"
+    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC BY 3.0). This page is an unofficial community-run mirror of the official Godot Engine documentation. (c58600d)"
 )
 author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
